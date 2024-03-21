@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.plus-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 465;
+  font-style: normal;
+}
+.custom-kbd {
+  background: rgb(34,33,33);
+background: linear-gradient(274deg, rgba(34,33,33,1) 54%, rgba(87,87,87,1) 100%);
+}
+.user-bg{
+  background: rgb(10,10,10);
+background: linear-gradient(274deg, rgba(10,10,10,1) 55%, rgba(28,28,28,1) 97%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button{
+  background: rgb(51,51,51);
+background: linear-gradient(274deg, rgba(51,51,51,1) 67%, rgba(75,75,75,1) 97%);
 }
