@@ -8,7 +8,7 @@ function InputBox() {
     document.getElementById('my_modal_1').showModal()
   };
   return (
-    <div className="w-full  py-4">
+    <div className="w-full  py-4 ">
       <div className=" md:h-[4.6rem] rounded-xl flex items-center justify-between bg-[#141313c8] ">
         <div className="h-[60%] p-8 w-full flex flex-row justify-between items-center text-white plus-jakarta">
           <FaMicrophone className="cursor-pointer" />
