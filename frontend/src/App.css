@@ -21,3 +21,8 @@ background: linear-gradient(274deg, rgba(10,10,10,1) 55%, rgba(28,28,28,1) 97%);
   background: rgb(51,51,51);
 background: linear-gradient(274deg, rgba(51,51,51,1) 67%, rgba(75,75,75,1) 97%);
 }
+
+*{
+  margin: 0;
+  padding: 0;
+}

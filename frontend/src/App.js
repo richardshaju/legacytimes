@@ -5,11 +5,12 @@ import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <div className="h-full w-full flex flex-col bg-[#1f1f24] ">
+    <div className="h-screen w-full flex flex-col bg-[#1f1f24] ">
       <TopBar/>
       <Main/>
     </div>
   );
 }
+
 
 export default App;
