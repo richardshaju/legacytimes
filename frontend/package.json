@@ -1,8 +1,8 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://richardshaju.github.io/Artificium",
-  "proxy": "http://localhost:5000",
+  "homepage": ".",
+  "proxy": "https://legacytimes.onrender.com/",
   "private": true,
   "dependencies": {
     "@google/generative-ai": "^0.8.0",

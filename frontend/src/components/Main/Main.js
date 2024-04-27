@@ -22,7 +22,7 @@ async function SignIn() {
   const { uid, displayName, photoURL, email } = auth?.currentUser;
 
   try {
-    const response = await fetch("http://localhost:5000/signin", {
+    const response = await fetch("https://legacytimes.onrender.com/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ function Main() {
       if (user) {
         const userid = user.uid;
         try {
-          const response = await fetch("http://localhost:5000/getmessages", {
+          const response = await fetch("https://legacytimes.onrender.com/getmessages", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

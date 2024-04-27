@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FaMicrophone } from "react-icons/fa";
 import { BsFillSendFill } from "react-icons/bs";
 import "firebase/compat/firestore";
 import firebase from "firebase/compat/app";
@@ -22,7 +21,7 @@ function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages, scro
     setText('')
     try {
       setGenerateLoading(true)
-      const response = await fetch("http://localhost:5000/generate", {
+      const response = await fetch("https://legacytimes.onrender.com/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
