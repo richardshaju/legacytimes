@@ -4,7 +4,6 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import { sigin, getmessage, generate } from "./controllers.js";
-import login from "@copy412/instagram-bot/src/login.js";
 
 // Configurations
 dotenv.config();
@@ -43,3 +42,5 @@ mongoose
   .catch((error) => {
     console.log(`${error} did not connect`);
   });
+
+  export default app
