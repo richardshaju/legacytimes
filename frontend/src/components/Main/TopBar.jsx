@@ -28,7 +28,7 @@ function TopBar() {
               Create Legacy TImes within seconds
             </p>
           </div>
-          <div className="right-5 text-md md:text-xl relative items-center flex justify-center cursor-pointer text-white">
+          <div className="md:right-5 right-0 text-md md:text-xl relative items-center flex justify-center cursor-pointer text-white">
             {user ? <PiSignOutBold  onClick={() => SignOut()} /> : null}
           </div>
         </div>

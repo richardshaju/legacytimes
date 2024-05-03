@@ -111,9 +111,9 @@ function Main() {
                         Generate{" "}
                         <span className="text-[#FAEF60]">Legacy Times</span>
                         <br />
-                        <p className="md:text-xl text-lg">
-                          Enter keyword to generate. Eg: Wordtune ai tool
-                          <p className="md:text-lg text-sm">
+                        <p className="md:text-xl text-lg mt-2">
+                          Enter keyword to generate. <br /> Eg: Wordtune ai tool
+                          <p className="md:text-lg text-sm mt-4">
                             PS: Regenrate by adding more related keywords if
                             desired result is not obtained
                           </p>
