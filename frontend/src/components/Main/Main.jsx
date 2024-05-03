@@ -39,11 +39,18 @@ async function SignIn() {
 function Main() {
   const [userMessages, setUserMessages] = useState([]);
   const [aiMessages, setAiMessages] = useState([]);
-  const [isCopiedIndexes, setisCopiedIndexes] = useState([]);
+  const [loading, setLoading] = useState()
   const [user] = useAuthState(auth);
   const dummy = useRef();
+
+  const handleScroll = () => {
+    dummy.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+
   useEffect(() => {
     const fetchMessages = async () => {
+      setLoading(true)
       if (user) {
         const userid = user.uid;
         try {
@@ -58,10 +65,11 @@ function Main() {
             }
           );
           if (response.ok) {
-            const responseData = await response.json(); // Parse response JSON
-            console.log(responseData);
+            const responseData = await response.json();
             setUserMessages(responseData.userMessages);
             setAiMessages(responseData.aiMessages);
+            setLoading(false)
+            handleScroll()
           }
         } catch (error) {
           console.error("Error fetching messages:", error);
@@ -74,10 +82,7 @@ function Main() {
     fetchMessages();
   }, [user]);
 
-  const handleScroll = () => {
-    dummy.current.scrollIntoView({ behavior: "smooth" });
-  };
-
+ 
   return (
     <div className="w-full h-screen md:h-full px-4 flex items-center flex-col ">
       <div className="w-[100%] sm:w-[70%] md:w-[50%] h-full flex flex-col justify-between">
@@ -90,12 +95,12 @@ function Main() {
               </div>
             </div>
           </div>
-        ) : (
+        ) : ( <>
+        {loading ? <Loading/> : (
           <div className="text-white h-[31rem]  text-3xl overflow-hidden relative">
-            <div className="h-full overflow-y-auto overflow-x-hidden right-[-17px]  absolute top-0 bottom-0 left-0 pr-4 py-3 ">
+            <div className="h-full overflow-y-auto overflow-x-hidden right-[-15px] md:right-[-17px]  absolute top-0 bottom-0 left-0 pr-4 py-3 ">
               {userMessages &&
                 userMessages.map((userMsg, index) => {
-                  const isCopied = isCopiedIndexes.includes(index);
                   return (
                     <div key={index}>
                       {/* Display user message */}
@@ -150,6 +155,9 @@ function Main() {
               <div ref={dummy}></div>
             </div>
           </div>
+          )}
+        </> 
+
         )}
         <InputBox
           userMessages={userMessages}

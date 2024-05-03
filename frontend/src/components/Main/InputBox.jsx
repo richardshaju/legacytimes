@@ -43,7 +43,7 @@ function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages, scro
   }
   }
   return (
-    <div className="w-full pb-4 ">
+    <div className="w-full pb-4 bg-transparent">
       <div className=" h-[4.6rem] rounded-xl flex items-center justify-between bg-[#141313c8] ">
         <div className="h-[60%] p-8 w-full flex flex-row justify-between items-center text-white plus-jakarta">
           <input
