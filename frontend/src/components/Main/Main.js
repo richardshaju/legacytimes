@@ -86,7 +86,7 @@ function Main() {
 
   return (
     <div className="w-full h-full px-4 flex items-center flex-col ">
-      <div className="w-[100%] sm:w-[70%] md:w-[50%] h-full flex flex-col justify-between">
+      <div className="w-[100%] sm:w-[70%] md:w-[50%] h-screen md:h-full flex flex-col justify-between">
         {!user ? (
           <div className="flex justify-center items-center content-center text-center text-sm md:text-md">
             <div className="text-white plus-jakarta mt-[10rem] flex flex-col gap-3">
@@ -98,14 +98,14 @@ function Main() {
           </div>
         ) : (
           <div className="text-white h-[31rem]  text-3xl overflow-hidden relative">
-            <div className="h-full overflow-y-auto overflow-x-hidden md:right-[-17px] right-[-1px] absolute top-0 bottom-0 left-0  pt-3 pb-3">
+            <div className="h-full overflow-y-auto overflow-x-hidden right-[-17px]  absolute top-0 bottom-0 left-0 pr-4  py-3 ">
               {userMessages &&
                 userMessages.map((userMsg, index) => {
                   const isCopied = isCopiedIndexes.includes(index);
                   return (
                     <div key={index}>
                       {/* Display user message */}
-                      <div className="flex justify-end urbanist">
+                      <div className="flex justify-end urbanist ]">
                         <div className="flex flex-col w-fit items-end">
                           <div className="flex gap-3 items-center">
                             <p className="md:text-[18px] text-[14px]  font-semibold urbanist ">
@@ -117,7 +117,7 @@ function Main() {
                               </div>
                             </div>
                           </div>
-                          <p className="md:text-[16px] text-[12px] bg-[#141414] rounded-xl p-2 md:p-3 w-fit">
+                          <p className="md:text-[16px] text-[12px] bg-[#141414] rounded-xl p-2 md:p-3  w-[70%]">
                             {userMsg}
                           </p>
                         </div>
@@ -133,7 +133,7 @@ function Main() {
                               LT Generator
                             </p>
                           </div>
-                          <span className="bg-[#141414] md:text-[16px] text-[12px] rounded-xl md:p-5 p-3 cursor-pointer  w-fit">
+                          <span className="bg-[#141414] md:text-[16px] text-[12px] w-[70%] rounded-xl md:p-5 p-3 cursor-pointer ">
                             <p className="flex items-center gap-3 ">
                               Generated{" "}
                               {isCopied ? (
