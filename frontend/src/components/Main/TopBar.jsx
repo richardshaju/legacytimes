@@ -46,7 +46,7 @@ function TopBar({page}) {
             to="/library"
             className={`flex flex-row text-sm md:text-[17px] justify-evenly ${page == 'library' ? 'text-blue-500' : 'text-slate-500'} hover:text-blue-500 items-center gap-2  cursor-pointer`}
           >
-            <VscFolderLibrary />
+            <VscFolderLibrary color="blue"/>
             Library
           </Link>
         </div>
