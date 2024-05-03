@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import { FiShare2 } from "react-icons/fi";
 import { BiEditAlt } from "react-icons/bi";
 import { FiTriangle } from "react-icons/fi";
 import { IoChatbubbleOutline } from "react-icons/io5";
