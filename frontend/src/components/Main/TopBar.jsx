@@ -21,7 +21,7 @@ function TopBar({page}) {
       <div className="md:h-32 rounded-xl  bg-[#141313c8] ">
         <div className="h-[60%] w-full px-4 py-2 flex flex-row justify-between  text-white plus-jakarta">
           <div className="flex flex-col">
-            <h3 className="text-md md:text-2xl font-medium urbanist pb-1">
+            <h3 className="text-lg md:text-2xl font-medium urbanist pb-1">
               Legacy Times Generator
             </h3>
             <p className="text-gray-500 urbanist text-[10px] md:text-[14px] ">
