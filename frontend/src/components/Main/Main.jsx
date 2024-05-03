@@ -96,7 +96,7 @@ function Main() {
           </div>
         ) : (
           <>
-            {loading ? (
+            {loading || userMessages.length == 0 ? (
               <div className="mt-60 justify-center items-center flex flex-col text-white">
                 <span className="loading loading-ball loading-md md:loading-lg "></span> 
                 Loading...
