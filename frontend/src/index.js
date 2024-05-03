@@ -3,16 +3,16 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Library from "./components/Main/Library/Library";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Library from "./components/Library/Library";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}/>
-          <Route path="Library" element={<Library />} />
+        <Route path="/" element={<App />} />
+        <Route path="Library" element={<Library />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

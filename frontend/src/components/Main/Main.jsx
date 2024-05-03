@@ -27,7 +27,6 @@ async function SignIn() {
       },
       body: JSON.stringify({ uid, displayName, photoURL, email }), // Replace this with your data
     });
-    console.log(response);
     window.location.reload()
   } catch (error) {
     console.error("Error:", error);
@@ -82,6 +81,7 @@ function Main() {
 
     fetchMessages();
   }, [user]);
+
 
   return (
     <div className="w-full h-screen md:h-full px-4 flex items-center flex-col ">

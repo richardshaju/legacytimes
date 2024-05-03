@@ -9,13 +9,12 @@ import firebaseApp from "../../firebase";
 import "../../App.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-function TopBar() {
+function TopBar({page}) {
   const auth = firebaseApp.auth();
   function SignOut() {
     auth.signOut();
   }
   const [user] = useAuthState(auth);
-
   return (
     <div className="w-full  px-4 pt-4 ">
       <div className="md:h-32 rounded-xl  bg-[#141313c8] ">
@@ -37,14 +36,14 @@ function TopBar() {
         <div className="flex flex-row items-center gap-10 md:px-4 md:p-2 p-3">
           <Link
             to="/"
-            className="flex flex-row text-sm md:text-[17px] justify-evenly text-green-500 items-center gap-2  cursor-pointer"
+            className={`flex flex-row text-sm md:text-[17px] justify-evenly ${page == "generate" ? "text-green-500" : 'text-slate-500'} items-center gap-2 hover:text-green-500 cursor-pointer`}
           >
-            <FiTriangle color="green" />
+            <FiTriangle  />
             Generate
           </Link>
           <Link
-            to="library"
-            className="flex flex-row text-sm md:text-[17px] justify-evenly text-slate-400 items-center gap-2 hover:text-[#737373] cursor-pointer"
+            to="/library" 
+            className={`flex flex-row text-sm md:text-[17px] justify-evenly ${page === "library" ? "text-blue-500" : "text-slate-500"} items-center gap-2 hover:text-blue-500 cursor-pointer`}
           >
             <VscFolderLibrary />
             Library
