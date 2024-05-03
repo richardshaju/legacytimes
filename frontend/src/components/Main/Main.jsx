@@ -8,7 +8,6 @@ import firebaseApp from "../../firebase";
 import firebase from "firebase/compat/app";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useState } from "react";
-import Loading from "../Loading/Loading";
 import { useRef } from "react";
 import GoogleSignInButton from "../googleButton";
 import { FaWhatsapp } from "react-icons/fa";
@@ -98,8 +97,9 @@ function Main() {
         ) : (
           <>
             {loading ? (
-              <div className="mt-60">
-                <Loading />
+              <div className="mt-60 justify-center items-center flex flex-col text-white">
+                <span className="loading loading-ball loading-md md:loading-lg "></span> 
+                Loading...
               </div>
             ) : (
               <div className="text-white h-[31rem]  text-3xl overflow-hidden relative">

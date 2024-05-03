@@ -3,7 +3,6 @@ import { BsFillSendFill } from "react-icons/bs";
 import "firebase/compat/firestore";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-import Loading from "../Loading/Loading";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 
@@ -61,7 +60,7 @@ function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages}) {
           />
 
 
-          {GenerateLoading ? <Loading/>:
+          {GenerateLoading ? <span className="loading loading-spinner text-white"></span>:
           <button type="submit"
           disabled={!Text.length>0}
           onClick={() => OnSubmit()}
