@@ -13,6 +13,7 @@ import { useState } from "react";
 import Loading from "../Loading/Loading";
 import { useRef } from "react";
 import GoogleSignInButton from "../googleButton";
+import { FaWhatsapp } from "react-icons/fa";
 
 const auth = firebaseApp.auth();
 
@@ -46,13 +47,16 @@ function Main() {
       if (user) {
         const userid = user.uid;
         try {
-          const response = await fetch("https://legacytimes.onrender.com/getmessages", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ userid }),
-          });
+          const response = await fetch(
+            "https://legacytimes.onrender.com/getmessages",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ userid }),
+            }
+          );
           if (response.ok) {
             const responseData = await response.json(); // Parse response JSON
             console.log(responseData);
@@ -69,16 +73,6 @@ function Main() {
 
     fetchMessages();
   }, [user]);
-
-  const handleCopy = async (data, index) => {
-    await navigator.clipboard.writeText(data);
-
-    if (isCopiedIndexes.includes(index)) {
-      setisCopiedIndexes(isCopiedIndexes.filter((i) => i !== index));
-    } else {
-      setisCopiedIndexes([...isCopiedIndexes, index]);
-    }
-  };
 
   const handleScroll = () => {
     dummy.current.scrollIntoView({ behavior: "smooth" });
@@ -105,8 +99,8 @@ function Main() {
                   return (
                     <div key={index}>
                       {/* Display user message */}
-                      <div className="flex justify-end urbanist ]">
-                        <div className="flex flex-col w-fit items-end">
+                      <div className="flex justify-end urbanist ">
+                        <div className="flex flex-col items-end w-[80%]">
                           <div className="flex gap-3 items-center">
                             <p className="md:text-[18px] text-[14px]  font-semibold urbanist ">
                               {user?.displayName}
@@ -117,13 +111,13 @@ function Main() {
                               </div>
                             </div>
                           </div>
-                          <p className="md:text-[16px] text-[12px] bg-[#141414] rounded-xl p-2 md:p-3  w-[70%]">
+                          <p className="md:text-[16px] text-[12px] bg-[#141414] rounded-xl p-2 md:p-3">
                             {userMsg}
                           </p>
                         </div>
                       </div>
-                      <div className="flex urbanist">
-                        <div className="flex flex-col w-fit">
+                      <div className="flex urbanist w-[80%]">
+                        <div className="flex flex-col">
                           <div className="flex gap-3 items-center">
                             <img
                               className="rounded-full md:w-8 md:h-8 w-5 h-5"
@@ -133,20 +127,20 @@ function Main() {
                               LT Generator
                             </p>
                           </div>
-                          <span className="bg-[#141414] md:text-[16px] text-[12px] w-[70%] rounded-xl md:p-5 p-3 cursor-pointer ">
-                            <p className="flex items-center gap-3 ">
-                              Generated{" "}
-                              {isCopied ? (
-                                <MdDownloadDone />
-                              ) : (
-                                <MdContentCopy
-                                  onClick={() =>
-                                    handleCopy(aiMessages[index], index)
-                                  }
-                                />
-                              )}
+                          <span className="bg-[#141414] md:text-[16px] text-[12px]  rounded-xl md:p-5 p-3">
+                            <p className="flex items-center flex-col  gap-3 ">
+                              Your Legacy Times is Generated
+                              <a
+                                  href={`whatsapp://send?text=${encodeURIComponent(
+                                    aiMessages[index]
+                                  )}`}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                className="flex items-center cursor-pointer px-2 bg-[#232323] hover:bg-[#23232370] rounded-lg"
+                              >
+                                Share on Whatsapp &nbsp; <FaWhatsapp />
+                              </a>
                             </p>
-                            Legacy Times: {userMsg}
                           </span>
                         </div>
                       </div>

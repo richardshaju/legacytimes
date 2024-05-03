@@ -47,7 +47,7 @@ function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages, scro
       <div className=" h-[4.6rem] rounded-xl flex items-center justify-between bg-[#141313c8] ">
         <div className="h-[60%] p-8 w-full flex flex-row justify-between items-center text-white plus-jakarta">
           <input
-            className="text-xs md:text-sm focus:border-transparent focus:outline-none border-2 border-solid border-transparent w-60 h-7 bg-transparent"
+            className="text-xs md:text-sm focus:border-transparent focus:outline-none border-2 border-solid border-transparent w-full h-7 bg-transparent"
             type="string"
             value={Text}
             placeholder="Type the keywords for the article"
