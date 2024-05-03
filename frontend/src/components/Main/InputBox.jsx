@@ -7,7 +7,7 @@ import Loading from "../Loading/Loading";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 
-function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages, scroll}) {
+function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages}) {
   const [Text, setText] = useState("");
   const [GenerateLoading, setGenerateLoading] = useState(false);
   const auth = firebase.auth();
@@ -16,8 +16,8 @@ function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages, scro
 
   async function OnSubmit() {
     if(user){
-    scroll()
     setUserMessages([...userMessages, Text]);
+    setAiMessages([...aiMessages, "loading"]);
     setText('')
     try {
       setGenerateLoading(true)
@@ -31,9 +31,9 @@ function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages, scro
       if (response.ok) {
         const responseData = await response.json(); // Parse response JSON
         console.log(responseData);
+        setAiMessages(aiMessages.slice(0, -1))
         setAiMessages([...aiMessages, responseData.output]);
         setGenerateLoading(false)
-
       }
     } catch (error) {
       console.error("Error:", error);
@@ -42,6 +42,11 @@ function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages, scro
     return
   }
   }
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      OnSubmit()
+    }
+  };
   return (
     <div className="w-full pb-4 bg-transparent">
       <div className=" h-[4.6rem] rounded-xl flex items-center justify-between bg-[#141313c8] ">
@@ -52,6 +57,7 @@ function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages, scro
             value={Text}
             placeholder="Type the keywords for the article"
             onChange={(e) => setText(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
 
 
