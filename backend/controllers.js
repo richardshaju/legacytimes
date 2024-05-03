@@ -79,7 +79,7 @@ export async function generate(user, res) {
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API);
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
     const prompt = 
-    `If you get any input write an article the exact same format given here the aligment should be strictly follow and the article should be 100% legit if you don't know about just pass it DON'T WRITE IMAGINARY ARTICLE:
+    `If you get any input write an article the exact same format given here the aligment should be strictly follow and the article should be 100% legit if you don't know about just pass it DON'T WRITE IMAGINARY ARTICLE also add emojis in the points as bullets if nesscary:
 
 *LEGACY TIMES*
 _Something_ *Unknown*, _Something_ *New*, _But Always_ *Useful!*
