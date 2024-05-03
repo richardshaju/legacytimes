@@ -101,7 +101,9 @@ VASA goes beyond simple lip-syncing. It captures a wide range of facial expressi
 
     input: ${user.Text}`;
 
-    const tail = `Feel free to ask doubts here or whenever you see us! 😉
+    const tail = `
+
+Feel free to ask doubts here or whenever you see us! 😉
 
 See you next Wednesday!
 *CREATE. SUSTAIN. THRIVE.*`;
