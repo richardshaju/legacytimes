@@ -36,7 +36,6 @@ async function SignIn() {
 function Main() {
   const [userMessages, setUserMessages] = useState([]);
   const [aiMessages, setAiMessages] = useState([]);
-  const [loading, setLoading] = useState();
   const [user] = useAuthState(auth);
 
   const chatContainerRef = useRef(null);
@@ -51,7 +50,6 @@ function Main() {
 
   useEffect(() => {
     const fetchMessages = async () => {
-      setLoading(true);
       if (user) {
         const userid = user.uid;
         try {
@@ -69,7 +67,6 @@ function Main() {
             const responseData = await response.json();
             setUserMessages(responseData.userMessages);
             setAiMessages(responseData.aiMessages);
-            setLoading(false);
           }
         } catch (error) {
           console.error("Error fetching messages:", error);
@@ -96,7 +93,7 @@ function Main() {
           </div>
         ) : (
           <>
-            {loading || userMessages.length == 0 ? (
+            {userMessages.length == 0 ? (
               <div className="mt-60 justify-center items-center flex flex-col text-white">
                 <span className="loading loading-ball loading-md md:loading-lg "></span> 
                 Loading...
