@@ -86,29 +86,18 @@ _Something_ *Unknown*, _Something_ *New*, _But Always_ *Useful!*
 
 *Issue No: 035*
     
-Roobadge VW  : Transforming the Volkswagen Badge into a protective audio shield
+*VASA:* Convert Static image it into a talking clip
 
+Imagine bringing a picture to life! Microsoft's VASA (Visual Affective Skills Animation) is a groundbreaking AI model that can generate realistic talking faces from a single image and a short audio clip.
+VASA goes beyond simple lip-syncing. It captures a wide range of facial expressions and natural head movements, creating a truly believable experience.
 
--🚀 *Goal :* Reduce kangaroo-vehicle accidents, a major concern in Australia accounting for 90% of wildlife collisions.
--🚀 *Function :* Act as an audio deterrent by emitting sounds tailored to specific kangaroo species based on location.
--🚀 *Technology :* RooBadge replaces the Volkswagen badge and integrates a speaker.
-Connects to an in-car app that utilizes GPS and kangaroo distribution data.
-Emits a "focused beam" of high-frequency sounds combining natural and artificial noises to alert kangaroos.
+*What VASA Can Do:*
 
-*⚒ Development :* Collaborations with University of Melbourne and wildlife rescue organization WIRES.
-Initial testing focused on Eastern Grey Kangaroos, with plans to expand to other species.
-Tested sounds on kangaroos in controlled environments and later on vehicles in high-risk areas.
+- *Talk with Emotion:* VASA synchronizes lip movements and facial expressions to the tone of the audio, making the generated speech feel natural and engaging.
 
-*⚠ Species-optimisation :* With multiple species of kangaroo found across Australia, all of which react differently to different sounds, producing a single sound to deter them all is nearly impossible. So, in a world-first innovation, RooBadge uses machine learning to compare its GPS coordinates against kangaroo distribution data to optimise its sound, deterring the kangaroo species that inhabit that location.
+- *Bring Pictures Alive:*  Imagine using a family photo to create a personalized greeting video message. VASA opens doors to new forms of creative expression.
 
-*🌟 Features :* Real-time collision data collection
-Geo Activation
-Plug-and-play installation
-
-*🔮 Future Potential :* Potential adaptation for deterring other wildlife in different regions, with deer being a possibility.
-
-
-*Learn more through :*  https://youtu.be/W9klRlKoEQk?si=EursIN6qJN8G12gP
+*VASA:* https://www.microsoft.com/en-us/research/project/vasa-1/
 
 
 Feel free to ask doubts here or whenever you see us! 😉

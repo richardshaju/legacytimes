@@ -6,7 +6,7 @@ import TopBar from './components/Main/TopBar';
 function App() {
   return (
     <div className="h-screen w-full flex flex-col bg-[#1f1f24] ">
-      <TopBar page={'generate'}/>
+      <TopBar/>
       <Main/>
     </div>
   );
