@@ -85,8 +85,8 @@ function Main() {
   };
 
   return (
-    <div className="w-full h-full px-4 flex items-center flex-col ">
-      <div className="w-[100%] sm:w-[70%] md:w-[50%] h-screen md:h-full flex flex-col justify-between">
+    <div className="w-full h-screen md:h-full px-4 flex items-center flex-col ">
+      <div className="w-[100%] sm:w-[70%] md:w-[50%] h-full flex flex-col justify-between">
         {!user ? (
           <div className="flex justify-center items-center content-center text-center text-sm md:text-md">
             <div className="text-white plus-jakarta mt-[10rem] flex flex-col gap-3">
@@ -98,7 +98,7 @@ function Main() {
           </div>
         ) : (
           <div className="text-white h-[31rem]  text-3xl overflow-hidden relative">
-            <div className="h-full overflow-y-auto overflow-x-hidden right-[-17px]  absolute top-0 bottom-0 left-0 pr-4  py-3 ">
+            <div className="h-full overflow-y-auto overflow-x-hidden right-[-17px]  absolute top-0 bottom-0 left-0 pr-4 py-3 ">
               {userMessages &&
                 userMessages.map((userMsg, index) => {
                   const isCopied = isCopiedIndexes.includes(index);
