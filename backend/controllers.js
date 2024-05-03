@@ -99,6 +99,8 @@ VASA goes beyond simple lip-syncing. It captures a wide range of facial expressi
 
 *VASA:* https://www.microsoft.com/en-us/research/project/vasa-1/
 
+(the given below lines should show exactly as same)
+
 Feel free to ask doubts here or whenever you see us! 😉
 
 See you next Wednesday!
