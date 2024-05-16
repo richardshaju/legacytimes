@@ -25,9 +25,8 @@ async function SignIn() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ uid, displayName, photoURL, email }), // Replace this with your data
+      body: JSON.stringify({ uid, displayName, photoURL, email }),
     });
-    console.log(response);
     window.location.reload();
   } catch (error) {
     console.error("Error:", error);
@@ -100,7 +99,10 @@ function Main() {
             {loading ? (
               <div className="mt-60 justify-center items-center flex flex-col text-white">
                 <span className="loading loading-ball loading-md md:loading-lg "></span>
-                <p className="md:text-lg text-sm">Loading...</p>
+                <p className="md:text-lg text-sm flex flex-col items-center">
+                  <p>Loading...</p>
+                  <p>Initial loading might take more than 30 seconds long</p>
+                </p>
               </div>
             ) : (
               <div className="text-white h-[31rem]  text-3xl overflow-hidden relative">
