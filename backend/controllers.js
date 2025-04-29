@@ -1,7 +1,8 @@
 import messages from "./models/messages.js";
 import user from "./models/user.js";
 import dotenv from "dotenv";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
+
 export async function sigin(userData, res) {
   try {
     const id = userData.uid;
@@ -75,8 +76,7 @@ export async function generate(user, res) {
   try {
     console.log("Genertaing...");
     console.log(user.Text);
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API);
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API });
     const prompt = `If you get any input write an article the exact same format given here the aligment should be strictly follow and the article should be 100% legit if you don't know about just pass it DON'T WRITE IMAGINARY ARTICLE also add emojis in the points as bullets if nesscary:
 
 *LEGACY TIMES*
@@ -107,12 +107,23 @@ Feel free to ask doubts here or whenever you see us! 😉
 
 See you next Wednesday!
 *CREATE. SUSTAIN. THRIVE.*`;
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    var output = response.text();
-    output = output + tail;
-    res.status(200).json({ output });
-    storeAiMessage(user, output);
+
+    const response = await genAI.models.generateContent({
+      model: "gemini-2.0-flash",
+      contents: prompt,
+    });
+
+    let output = "";
+    if (response && response.text) {
+      output = response.text;
+      console.log(output);
+      output = output + tail;
+      res.status(200).json({ output });
+      storeAiMessage(user, output);
+    } else {
+      console.log("No text in response:", response);
+      res.status(500).json({ message: "Failed to generate content" });
+    }
   } catch (error) {
     res.status(400).json({ message: "not found" });
   }

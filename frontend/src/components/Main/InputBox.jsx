@@ -19,8 +19,10 @@ function InputBox({userMessages,setUserMessages, aiMessages, setAiMessages}) {
     setAiMessages([...aiMessages, "loading"]);
     setText('')
     try {
+
+      // :"https://legacytimes.onrender.com/generate"
       setGenerateLoading(true)
-      const response = await fetch("https://legacytimes.onrender.com/generate", {
+      const response = await fetch("https://legacytimes.onrender.com/generate"  , {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

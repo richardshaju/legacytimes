@@ -19,8 +19,10 @@ async function SignIn() {
   await auth.signInWithPopup(provider);
   const { uid, displayName, photoURL, email } = auth?.currentUser;
 
+  // : "https://legacytimes.onrender.com/signin"
+
   try {
-    const response = await fetch("https://legacytimes.onrender.com/signin", {
+    const response = await fetch("https://legacytimes.onrender.com/signin" , {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,14 +51,17 @@ function Main() {
     }
   }, [aiMessages]);
 
+  
   useEffect(() => {
     const fetchMessages = async () => {
       setLoading(true);
       if (user) {
         const userid = user.uid;
+
+        // "https://legacytimes.onrender.com/getmessages",
         try {
-          const response = await fetch(
-            "https://legacytimes.onrender.com/getmessages",
+          const response = await fetch("https://legacytimes.onrender.com/getmessages",
+           
             {
               method: "POST",
               headers: {
